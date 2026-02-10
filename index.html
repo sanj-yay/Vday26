@@ -113,15 +113,10 @@
 
     <p>
       I won’t pretend this is accidental.<br><br>
-
-      I have been thinking about us,  
-      and instead of ignoring it, I leaned into it.<br><br>
-
+      I have been thinking about us and instead of ignoring it, I leaned into it.<br><br>
       This isn’t nostalgia.<br>
-      And it’s definitely not boredom.<br><br>
-
       It’s curiosity.<br>
-      The kind that makes you pause for a second 😌
+      The kind that makes you pause 😌
     </p>
 
     <h2>Umm... will you be my Valentine? 💌</h2>
@@ -160,11 +155,8 @@
       const containerRect = container.getBoundingClientRect();
       const btnRect = noBtn.getBoundingClientRect();
 
-      const maxX = containerRect.width - btnRect.width;
-      const maxY = containerRect.height - btnRect.height;
-
-      const x = Math.random() * maxX;
-      const y = Math.random() * maxY;
+      const x = Math.random() * (containerRect.width - btnRect.width);
+      const y = Math.random() * (containerRect.height - btnRect.height);
 
       noBtn.style.left = x + "px";
       noBtn.style.top = y + "px";
@@ -180,8 +172,6 @@
     noBtn.addEventListener("click", () => {
       if (!confessionUnlocked) return;
 
-      window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSdiJ3aANoBF1YKblK0xftMg8Wcy0hCYHTAB-bCq3SELMgRXrw/viewform?usp=pp_url&entry.603901364=No";
-
       document.body.innerHTML = `
         <div style="
           display:flex;
@@ -194,30 +184,87 @@
           padding:30px;
         ">
           <div style="max-width:520px;">
-            <h1>Hey.</h1>
+            <h1>Hey</h1>
             <p style="font-size:18px; line-height:1.7; margin-top:20px;">
-              I didn’t make this to put you in an awkward spot.<br><br>
+              I didn’t make this to put you in an awkward spot<br><br>
+              You crossed my mind and brushing it off felt dishonest.<br><br>
+              I don’t expect anything<br>
+              I just wanted you to know I still care, calmly, not chaotically.<br><br>
+              Whatever you feel is completely okay
+              With love- forever your baddie boi😊
+        
+            </p>
 
-              You crossed my mind —  
-              and brushing it off felt dishonest.<br><br>
+            <button id="continueNo" style="
+              margin-top:35px;
+              padding:12px 26px;
+              border:none;
+              border-radius:25px;
+              font-size:15px;
+              cursor:pointer;
+              background:#ff5c8a;
+              color:white;
+            ">
+              Continue
+            </button>
 
-              I don’t expect anything from this.<br>
-              I just wanted you to know that I still care,<br>
-              and I care in a calm, steady way — not a chaotic one.<br><br>
-
-              Whatever you feel is completely okay.
+            <p style="font-size:13px; opacity:0.6; margin-top:18px;">
+              (Take your time. You don’t need to respond.)
             </p>
           </div>
         </div>
       `;
+
+      document.getElementById("continueNo").onclick = () => {
+        window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSdiJ3aANoBF1YKblK0xftMg8Wcy0hCYHTAB-bCq3SELMgRXrw/viewform?usp=pp_url&entry.603901364=No";
+      };
     });
 
     function yesClicked() {
-      window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSdiJ3aANoBF1YKblK0xftMg8Wcy0hCYHTAB-bCq3SELMgRXrw/viewform?usp=pp_url&entry.603901364=Yes";
+      document.body.innerHTML = `
+        <div style="
+          display:flex;
+          height:100vh;
+          align-items:center;
+          justify-content:center;
+          font-family:'Playfair Display',serif;
+          background:linear-gradient(135deg,#f8e8ee,#e8f0ff);
+          text-align:center;
+          padding:30px;
+        ">
+          <div style="max-width:520px;">
+            <h1>💖 Hey</h1>
+            <p style="font-size:18px; line-height:1.7; margin-top:20px;">
+              I’m glad you said yes<br><br>
+              I like that it felt natural, not forced.<br><br>
+              Let’s take this one step at a time
+            </p>
+
+            <button id="continueYes" style="
+              margin-top:35px;
+              padding:12px 26px;
+              border:none;
+              border-radius:25px;
+              font-size:15px;
+              cursor:pointer;
+              background:#ff5c8a;
+              color:white;
+            ">
+              Continue
+            </button>
+
+            <p style="font-size:13px; opacity:0.6; margin-top:18px;">
+              (No pressure. We’ll talk when it feels right.)
+            </p>
+          </div>
+        </div>
+      `;
+
+      document.getElementById("continueYes").onclick = () => {
+        window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSdiJ3aANoBF1YKblK0xftMg8Wcy0hCYHTAB-bCq3SELMgRXrw/viewform?usp=pp_url&entry.603901364=Yes";
+      };
     }
   </script>
 
 </body>
 </html>
-
-
